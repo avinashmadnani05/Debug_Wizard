@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CodeInputForm from "../components/CodeInputForm";
 import AnalysisResult from "../components/AnalysisResult";
-
+import "../styles/Analyze.css";
 function Analyze() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
