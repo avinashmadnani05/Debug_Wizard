@@ -10,7 +10,7 @@ function Feedback() {
     e.preventDefault();
     const payload = { code, feedback, rating };
     try {
-      const response = await fetch("http://localhost:8000/feedback", {
+      const response = await fetch("https://debug-wizard-967w.onrender.com/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
