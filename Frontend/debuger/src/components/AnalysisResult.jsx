@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import CodeInputForm from "../components/CodeInputForm";
 import AnalysisResult from "../components/AnalysisResult";
-import "../styles/Analyze.css"; // Import individual CSS for Analyze page
 
 function Analyze() {
   const [result, setResult] = useState(null);
