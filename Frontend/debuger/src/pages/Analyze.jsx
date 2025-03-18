@@ -9,7 +9,7 @@ function Analyze() {
   const handleAnalyze = async (code) => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:8000/analyze", {
+      const response = await fetch(`https://debug-wizard-967w.onrender.com`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ code }),
