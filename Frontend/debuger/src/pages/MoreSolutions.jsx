@@ -6,7 +6,7 @@ function MoreSolutions() {
   return (
     <div className="page solutions-page">
       <h1 className="page-title animated-header">Advanced Debugging Solutions</h1>
-      <img src="/images/solutions-banner.jpg" alt="Solutions Banner" className="banner-image" />
+      <img src="/banner2.jpg" alt="Solutions Banner" className="banner-image" />
       <p>
         Here you can explore additional features such as integrating more linters,
         performance analysis tools, and detailed debugging tips.
