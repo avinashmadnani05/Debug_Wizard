@@ -28,36 +28,22 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap; /* Ensures items wrap in smaller screens */
 }
 
 .navbar a {
-    display: block;
+    display: block;  /* Ensuring all links are block-level elements */
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
     padding: 10px 15px;
-    border: 2px solid #fff;
-    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff; /* Adding a border */
+    background: rgba(255, 255, 255, 0.1); /* Slight background for visibility */
     transition: color 0.2s ease, background 0.3s ease, transform 0.2s ease;
     text-align: center;
-    margin: 5px; /* Adds spacing between items */
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .navbar-content {
-        flex-direction: column; /* Stack items in small screens */
-        align-items: center;
-    }
-
-    .navbar a {
-        width: 90%; /* Makes buttons fit within screen width */
-    }
 }
 
 .navbar a:hover {
     color: #ddd;
     background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight scale effect */
 }
