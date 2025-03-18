@@ -1,44 +1,21 @@
-// src/pages/Analyze.jsx
-import React, { useState } from "react";
-import CodeInputForm from "../components/CodeInputForm";
-import AnalysisResult from "../components/AnalysisResult";
+import React from "react";
 
-function Analyze() {
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const handleAnalyze = async (code) => {
-    setLoading(true);
-    try {
-      const response = await fetch("https://debug-wizard-967w.onrender.com/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code }),
-      });
-      const data = await response.json();
-      setResult(data);
-    } catch (error) {
-      console.error("Error analyzing code:", error);
-    }
-    setLoading(false);
-  };
+function AnalysisResult({ result }) {
+  if (!result) return null;
 
   return (
-    <div className="page analyze-page">
-      <h1 className="page-title animated-header">Analyze Your Code</h1>
-      {/* Banner image for Analyze page */}
-      <img src="/images/analyze-banner.jpg" alt="Analyze Banner" className="banner-image" />
-      <CodeInputForm onSubmit={handleAnalyze} />
-      {loading ? (
-        <div className="loading">
-          <img src="/images/loading.gif" alt="Loading" className="loading-icon" />
-          <p>Loading...</p>
-        </div>
+    <div>
+      <h2>Analysis Result</h2>
+      {result.error ? (
+        <>
+          <p><strong>Error:</strong> {result.error}</p>
+          <p><strong>Suggestion:</strong> {result.suggestion}</p>
+        </>
       ) : (
-        <AnalysisResult result={result} />
+        <p>{result.suggestion}</p>
       )}
     </div>
   );
 }
 
-export default Analyze;
+export default AnalysisResult;

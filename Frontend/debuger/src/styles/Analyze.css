@@ -1,14 +1,15 @@
 /* src/styles/Analyze.css */
+
 .analyze-page {
     margin: 20px auto;
     padding: 20px;
     max-width: 900px;
-    background: #f0f8ff;
+    background: #f0f8ff; /* Light, refreshing background */
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .page-title {
+  .analyze-page h1 {
     font-size: 2.5rem;
     text-align: center;
     color: #333;
@@ -16,23 +17,37 @@
     animation: fadeInDown 1s ease-out;
   }
   
-  .banner-image {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
+  /* Style for the CodeInputForm container if needed */
+  .analyze-page form {
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #ffffff;
   }
   
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
+  /* Style for the loading state */
   .loading {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
   }
   
-  .loading-icon {
-    width: 50px;
-    height: 50px;
+  .loading p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Animation for the header */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
