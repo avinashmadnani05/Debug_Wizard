@@ -1,4 +1,6 @@
+// src/pages/Feedback.jsx
 import React, { useState } from "react";
+import "../styles/Feedback.css"; // Import individual CSS for Feedback page
 
 function Feedback() {
   const [code, setCode] = useState("");
@@ -26,11 +28,11 @@ function Feedback() {
   };
 
   return (
-    <div>
-      <h1>Submit Feedback</h1>
-      {message && <p>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
+    <div className="page feedback-page">
+      <h1 className="page-title animated-header">Submit Feedback</h1>
+      {message && <p className="feedback-message">{message}</p>}
+      <form onSubmit={handleSubmit} className="feedback-form">
+        <div className="form-group">
           <label>Code:</label>
           <textarea
             value={code}
@@ -38,9 +40,10 @@ function Feedback() {
             rows="5"
             cols="50"
             placeholder="Enter the code you analyzed..."
+            className="input-textarea"
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Feedback:</label>
           <textarea
             value={feedback}
@@ -48,9 +51,10 @@ function Feedback() {
             rows="3"
             cols="50"
             placeholder="Your feedback..."
+            className="input-textarea"
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Rating (1-5):</label>
           <input
             type="number"
@@ -58,9 +62,10 @@ function Feedback() {
             onChange={(e) => setRating(e.target.value)}
             min="1"
             max="5"
+            className="input-number"
           />
         </div>
-        <button type="submit">Submit Feedback</button>
+        <button type="submit" className="submit-button">Submit Feedback</button>
       </form>
     </div>
   );

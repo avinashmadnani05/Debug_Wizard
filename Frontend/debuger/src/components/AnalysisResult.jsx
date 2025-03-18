@@ -1,21 +1,45 @@
-import React from "react";
+// src/pages/Analyze.jsx
+import React, { useState } from "react";
+import CodeInputForm from "../components/CodeInputForm";
+import AnalysisResult from "../components/AnalysisResult";
+import "../styles/Analyze.css"; // Import individual CSS for Analyze page
 
-function AnalysisResult({ result }) {
-  if (!result) return null;
+function Analyze() {
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleAnalyze = async (code) => {
+    setLoading(true);
+    try {
+      const response = await fetch("https://debug-wizard-967w.onrender.com/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code }),
+      });
+      const data = await response.json();
+      setResult(data);
+    } catch (error) {
+      console.error("Error analyzing code:", error);
+    }
+    setLoading(false);
+  };
 
   return (
-    <div>
-      <h2>Analysis Result</h2>
-      {result.error ? (
-        <>
-          <p><strong>Error:</strong> {result.error}</p>
-          <p><strong>Suggestion:</strong> {result.suggestion}</p>
-        </>
+    <div className="page analyze-page">
+      <h1 className="page-title animated-header">Analyze Your Code</h1>
+      {/* Banner image for Analyze page */}
+      <img src="/images/analyze-banner.jpg" alt="Analyze Banner" className="banner-image" />
+      <CodeInputForm onSubmit={handleAnalyze} />
+      {loading ? (
+        <div className="loading">
+          <img src="/images/loading.gif" alt="Loading" className="loading-icon" />
+          <p>Loading...</p>
+        </div>
       ) : (
-        <p>{result.suggestion}</p>
+        <AnalysisResult result={result} />
       )}
     </div>
   );
 }
 
-export default AnalysisResult;
+export default Analyze;

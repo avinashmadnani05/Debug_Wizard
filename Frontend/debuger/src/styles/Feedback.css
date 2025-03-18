@@ -1,0 +1,55 @@
+/* src/styles/Feedback.css */
+.feedback-page {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: #e8f5e9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .page-title {
+    text-align: center;
+    color: #2e7d32;
+    animation: fadeInDown 1s ease-out;
+  }
+  
+  .feedback-message {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .feedback-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: monospace;
+  }
+  
+  .input-number {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #1b5e20;
+  }
+  
